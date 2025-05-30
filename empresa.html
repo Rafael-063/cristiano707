@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fãs do CR7 - O Maior de Todos</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container Principal */
+        #corpo {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 3px solid #000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Cabeçalho */
+        #topo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+
+        #topo img {
+            height: 60px;
+            width: auto;
+        }
+
+        #topo h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Menu de Navegação */
+        #menu {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #111;
+        }
+
+        #menu div {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 25px;
+            background: #333;
+            color: #fff;
+            border: 2px solid #f0c040;
+            box-shadow: 2px 2px 0 #f0c040;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        #menu div:hover {
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 0 #f0c040;
+            background: #444;
+        }
+
+        /* Conteúdo Principal */
+        #conteudo {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            gap: 30px;
+            background-color: #fff;
+        }
+
+        /* Colunas Laterais */
+        #esquerda, #direita {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #esquerda img, #direita img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #esquerda img:hover, #direita img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Coluna Central */
+        #centro {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bio {
+            background-color: #fafafa;
+            padding: 25px;
+            border-left: 5px solid #f0c040;
+            text-align: justify;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+
+        .bio h2 {
+            text-align: center;
+            color: #f0c040;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Rodapé */
+        #rodape {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        #rodape p {
+            margin: 5px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            #conteudo {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #esquerda, #centro, #direita {
+                width: 90%;
+            }
+            
+            #menu div {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #topo {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            #topo h1 {
+                font-size: 1.5em;
+            }
+            
+            #menu div {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+            
+            .bio {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="corpo">
+        <!-- Cabeçalho -->
+        <div id="topo">
+            <img src="imagens/logocr7.png" alt="Logo Fãs do CR7">
+            <h1>Fãs do Cristiano Ronaldo</h1>
+        </div>
+
+        <!-- Menu de Navegação -->
+        <div id="menu">
+            <div onclick="location.href='index.html'">Quem é Cristiano Ronaldo</div>
+            <div onclick="location.href='empresa.html'">Biografia</div>
+            <div onclick="location.href='faleconosco.html'">Conquistas</div>
+            <div onclick="location.href='serviços.html'">Ações pelo mundo</div>
+            <div onclick="location.href='contatos.html'">Entre em contato</div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div id="conteudo">
+            <!-- Coluna Esquerda -->
+            <div id="esquerda">
+                <img src="imagens/cr7-mirim.jpg" alt="CR7 jovem no Sporting">
+                <img src="imagens/cr7-adolescente.jpg" alt="CR7 no Manchester United">
+                <img src="imagens/gostoso5.jpg">
+                <img src="imagens/fera1.jpg">
+            </div>
+
+            <!-- Coluna Central -->
+            <div id="centro">
+                <div class="bio">
+                    <h2>Biografia de Cristiano Ronaldo dos Santos Aveiro</h2>
+                    
+                    <p><strong>Infância e Primeiros Anos</strong><br />
+                    Cristiano Ronaldo nasceu no dia <strong>5 de fevereiro de 1985</strong>, em <strong>Funchal, Madeira (Portugal)</strong>. Filho de Maria Dolores dos Santos e José Dinis Aveiro, cresceu em um ambiente humilde, com três irmãos mais velhos. Seu nome foi inspirado no ex-presidente dos EUA <strong>Ronald Reagan</strong>, uma homenagem do pai, que admirava o político.</p>
+
+                    <p>Desde cedo, mostrou paixão pelo futebol, jogando nas ruas de Madeira e depois nas categorias de base do <strong>Andorinha</strong>, clube onde seu pai trabalhava. Mais tarde, ingressou no <strong>Nacional da Madeira</strong> e, aos <strong>12 anos</strong>, deixou sua família para se juntar à academia do <strong>Sporting CP</strong>, em Lisboa.</p>
+
+                    <p><strong>Início no Futebol Profissional: Sporting CP (2002-2003)</strong><br />
+                    Ronaldo estreou no time principal do <strong>Sporting</strong> em <strong>2002</strong>, chamando a atenção por sua habilidade e velocidade. Um amistoso contra o <strong>Manchester United</strong>, em 2003, mudou sua vida: seu desempenho foi tão impressionante que os jogadores do United pediram ao técnico <strong>Sir Alex Ferguson</strong> para contratá-lo.</p>
+
+                    <p><strong>Manchester United (2003-2009): A Transformação</strong><br />
+                    Com apenas <strong>18 anos</strong>, Ronaldo chegou à Inglaterra em <strong>2003</strong>. No início, era criticado por excesso de dribles e decisões egoístas, mas, sob a orientação de Ferguson, evoluiu para um jogador mais completo e decisivo.</p>
+
+                    <p>Sua personalidade competitiva e ética de trabalho o tornaram um dos melhores do mundo. Marcou gols importantes, liderou o ataque do United e conquistou o coração da torcida.</p>
+
+                    <p><strong>Real Madrid (2009-2018): O Sonho Branco</strong><br />
+                    Em <strong>2009</strong>, Ronaldo realizou seu sonho de jogar no <strong>Real Madrid</strong>, tornando-se a transferência mais cara da história na época. Em Madrid, ele se superou a cada temporada, quebrando recordes e se tornando um ídolo absoluto.</p>
+
+                    <p>Jogando ao lado de estrelas como <strong>Benzema, Bale e Modrić</strong>, formou um time lendário que dominou a Europa. Sua rivalidade com <strong>Lionel Messi</strong> elevou o nível do futebol mundial, criando uma das maiores disputas esportivas da história.</p>
+
+                    <p><strong>Juventus (2018-2021) e Volta ao Manchester United (2021-2022)</strong><br />
+                    Em <strong>2018</strong>, Ronaldo aceitou um novo desafio na <strong>Juventus</strong>, onde continuou a marcar gols e inspirar seus companheiros. Em <strong>2021</strong>, fez um retorno emocionante ao <strong>Manchester United</strong>, mas sua segunda passagem foi marcada por altos e baixos, com conflitos internos e desempenho irregular do time.</p>
+
+                    <p><strong>Al-Nassr (2023-presente) e Seleção Portuguesa</strong><br />
+                    Em <strong>2023</strong>, Ronaldo surpreendeu o mundo ao assinar com o <strong>Al-Nassr</strong>, da Arábia Saudita, levando seu talento para um novo cenário.</p>
+
+                    <p><strong>Pela seleção de Portugal</strong>, ele sempre foi o grande símbolo. Liderou a equipe na conquista da <strong>Eurocopa 2016</strong>, seu primeiro título internacional, e da <strong>Liga das Nações em 2019</strong>. Além disso, tornou-se o <strong>maior artilheiro da história das seleções</strong>, superando todos os recordes anteriores.</p>
+
+                    <p><strong>Vida Pessoal e Legado</strong><br />
+                    - <strong>Família:</strong> Pai de <strong>seis filhos</strong> (Cristiano Jr., os gêmeos Eva e Mateo, Alana Martina, e os gêmeos Bella Esmeralda e Ángel, este último falecido após o parto em 2022).<br />
+                    - <strong>Relacionamento:</strong> Vive com <strong>Georgina Rodríguez</strong> desde 2016.<br />
+                    - <strong>Fora dos campos:</strong> Investe em negócios, como hotéis, academias <strong>CR7</strong>, perfumes e moda.</p>
+
+                    <p><strong>Personalidade e Impacto no Futebol</strong><br />
+                    Ronaldo é conhecido por sua <strong>disciplina extrema</strong>, mentalidade vencedora e dedicação obsessiva ao esporte. Sua história é a de um menino humilde que se tornou um dos atletas mais famosos do mundo, inspirando milhões com sua trajetória.</p>
+
+                    <p><em>"O talento não é nada sem trabalho duro."</em> – Cristiano Ronaldo.</p>
+                </div>
+                
+              
+            </div>
+
+            <!-- Coluna Direita -->
+            <div id="direita">
+                <img src="imagens/cr7-e-gozo.jpg" alt="CR7 no Real Madrid">
+                <img src="imagens/cr7-de-terno.jpg" alt="CR7 pela seleção portuguesa">
+                <img src="imagens/fera2.jpg">
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div id="rodape">
+            <p>Site não-oficial dos fãs de Cristiano Ronaldo</p>
+            <p>Todos os direitos das imagens e vídeos pertencem a seus respectivos donos</p>
+            <p>&copy; 2025 - Fãs do CR7</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fãs do CR7 - Trabalho Humanitário</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container Principal */
+        #corpo {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 3px solid #000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Cabeçalho */
+        #topo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+
+        #topo img {
+            height: 60px;
+            width: auto;
+        }
+
+        #topo h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Menu de Navegação */
+        #menu {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #111;
+        }
+
+        #menu div {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 25px;
+            background: #333;
+            color: #fff;
+            border: 2px solid #f0c040;
+            box-shadow: 2px 2px 0 #f0c040;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        #menu div:hover {
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 0 #f0c040;
+            background: #444;
+        }
+
+        /* Conteúdo Principal */
+        #conteudo {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            gap: 30px;
+            background-color: #fff;
+        }
+
+        /* Colunas Laterais */
+        #esquerda, #direita {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #esquerda img, #direita img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #esquerda img:hover, #direita img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Coluna Central */
+        #centro {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bio {
+            background-color: #fafafa;
+            padding: 25px;
+            border-left: 5px solid #f0c040;
+            text-align: justify;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+
+        .bio h2 {
+            text-align: center;
+            color: #f0c040;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .acoes-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .acoes-list li {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .acoes-list strong {
+            color: #000;
+            font-size: 1.1em;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Rodapé */
+        #rodape {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        #rodape p {
+            margin: 5px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            #conteudo {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #esquerda, #centro, #direita {
+                width: 90%;
+            }
+            
+            #menu div {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #topo {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            #topo h1 {
+                font-size: 1.5em;
+            }
+            
+            #menu div {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+            
+            .bio {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="corpo">
+        <!-- Cabeçalho -->
+        <div id="topo">
+            <img src="imagens/logocr7.png" alt="Logo Fãs do CR7">
+            <h1>Fãs do Cristiano Ronaldo</h1>
+        </div>
+
+        <!-- Menu de Navegação -->
+        <div id="menu">
+            <div onclick="location.href='index.html'">Quem é Cristiano Ronaldo</div>
+            <div onclick="location.href='empresa.html'">Biografia</div>
+            <div onclick="location.href='faleconosco.html'">Conquistas</div>
+            <div onclick="location.href='serviços.html'">Ações pelo mundo</div>
+            <div onclick="location.href='contatos.html'">Entre em contato</div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div id="conteudo">
+            <!-- Coluna Esquerda -->
+            <div id="esquerda">
+                <img src="imagens/eleéfoda.jpg" alt="CR7 fazendo doação">
+                <img src="imagens/caridade.jpg" alt="CR7 visitando hospital">
+            </div>
+
+            <!-- Coluna Central -->
+            <div id="centro">
+                <div class="bio">
+                    <h2>As Boas Ações de Cristiano Ronaldo pelo Mundo</h2>
+                    
+                    <ul class="acoes-list">
+                        <li>
+                            <strong>Doação de €7 milhões para combate ao coronavírus</strong>
+                            <p>Em 2020, Ronaldo doou equipamentos médicos para hospitais em Portugal e contribuiu financeiramente para a luta contra a pandemia.</p>
+                        </li>
+                        <li>
+                            <strong>Financiamento de centro de tratamento de câncer infantil</strong>
+                            <p>No Hospital de Lisboa, ajudou a criar um centro especializado no tratamento de crianças com câncer.</p>
+                        </li>
+                        <li>
+                            <strong>Doação de sangue regular</strong>
+                            <p>Por não ter tatuagens, Ronaldo é doador frequente de sangue e plaquetas, incentivando seus fãs a fazerem o mesmo.</p>
+                        </li>
+                        <li>
+                            <strong>Apoio a vítimas do terremoto no Nepal</strong>
+                            <p>Doou €7 milhões para as vítimas do terremoto de 2015 no Nepal através da organização Save the Children.</p>
+                        </li>
+                        <li>
+                            <strong>Pagamento de cirurgia cerebral para criança</strong>
+                            <p>Custeou o tratamento de um menino de 10 meses na Espanha que precisava de uma cirurgia urgente.</p>
+                        </li>
+                        <li>
+                            <strong>Doação de €1.5 milhão para Gaza</strong>
+                            <p>Contribuiu para ajuda humanitária na Faixa de Gaza durante os conflitos de 2014.</p>
+                        </li>
+                        <li>
+                            <strong>Venda de camisa recorde para caridade</strong>
+                            <p>O leilão de uma camisa autografada arrecadou €1.8 milhão para instituições de caridade.</p>
+                        </li>
+                        <li>
+                            <strong>Ajuda a crianças refugiadas</strong>
+                            <p>Trabalhou com a Save the Children para apoiar educação de crianças refugiadas sírias.</p>
+                        </li>
+                        <li>
+                            <strong>Doação de prêmios em dinheiro</strong>
+                            <p>Vários prêmios em dinheiro que recebeu foram integralmente doados para instituições carentes.</p>
+                        </li>
+                        <li>
+                            <strong>Visitas regulares a hospitais infantis</strong>
+                            <p>Faz visitas surpresa a hospitais pediátricos para animar crianças doentes.</p>
+                        </li>
+                        <li>
+                            <strong>Financiamento de escolas em países pobres</strong>
+                            <p>Ajudou na construção de escolas na África através de doações anônimas.</p>
+                        </li>
+                        <li>
+                            <strong>Doação de €100 mil para menino com doença rara</strong>
+                            <p>Custeiou tratamento médico para um menino espanhol com displasia ectodérmica.</p>
+                        </li>
+                        <li>
+                            <strong>Apoio a vítimas de incêndios em Portugal</strong>
+                            <p>Doou grande quantia para ajudar as vítimas dos incêndios florestais em 2017.</p>
+                        </li>
+                        <li>
+                            <strong>Embaixador da Save the Children</strong>
+                            <p>Desde 2013, atua como embaixador global desta organização humanitária.</p>
+                        </li>
+                        <li>
+                            <strong>Doação de €5 milhões para tsunami na Indonésia</strong>
+                            <p>Ajudou nas operações de resgate após o tsunami de 2018.</p>
+                        </li>
+                        <li>
+                            <strong>Presentes para crianças carentes</strong>
+                            <p>Todo Natal, distribui presentes e doações para crianças pobres em Portugal.</p>
+                        </li>
+                        <li>
+                            <strong>Financiamento de pesquisas médicas</strong>
+                            <p>Apoiou financeiramente pesquisas sobre doenças raras em crianças.</p>
+                        </li>
+                        <li>
+                            <strong>Doação de salários</strong>
+                            <p>Em várias ocasiões, doou parte de seus salários para causas humanitárias.</p>
+                        </li>
+                        <li>
+                            <strong>Ajuda a fãs com problemas financeiros</strong>
+                            <p>Já pagou contas médicas e ajudou financeiramente vários fãs em dificuldades.</p>
+                        </li>
+                        <li>
+                            <strong>Doação de €1 milhão para Moçambique</strong>
+                            <p>Ajudou vítimas do ciclone Idai que atingiu Moçambique em 2019.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Coluna Direita -->
+            <div id="direita">
+                <img src="imagens/cirurgia.jpg" alt="CR7 com crianças">
+                <img src="imagens/cadeira.jpg" alt="CR7 em evento beneficente">
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div id="rodape">
+            <p>Site não-oficial dos fãs de Cristiano Ronaldo</p>
+            <p>Todos os direitos das imagens e vídeos pertencem a seus respectivos donos</p>
+            <p>&copy; 2025 - Fãs do CR7</p>
+        </div>
+    </div>
+
+    <script>
+        // Função para ajustar o layout dinamicamente
+        function ajustarLayout() {
+            const larguraTela = window.innerWidth;
+            const menu = document.getElementById('menu');
+            const topo = document.getElementById('topo');
+            const conteudo = document.getElementById('conteudo');
+            
+            // Ajustes para telas pequenas
+            if (larguraTela <= 600) {
+                // Reduzir tamanho do logo no topo
+                const logo = topo.querySelector('img');
+                if (logo) logo.style.height = '40px';
+                
+                // Ajustar espaçamento do menu
+                menu.style.padding = '10px 0';
+                
+                // Ajustar padding do conteúdo
+                conteudo.style.padding = '15px';
+                
+                // Esconder colunas laterais se a tela for muito pequena
+                if (larguraTela <= 400) {
+                    document.getElementById('esquerda').style.display = 'none';
+                    document.getElementById('direita').style.display = 'none';
+                    document.getElementById('centro').style.width = '100%';
+                } else {
+                    document.getElementById('esquerda').style.display = 'flex';
+                    document.getElementById('direita').style.display = 'flex';
+                    document.getElementById('centro').style.width = '90%';
+                }
+            } else {
+                // Restaurar valores padrão para telas maiores
+                const logo = topo.querySelector('img');
+                if (logo) logo.style.height = '60px';
+                
+                menu.style.padding = '15px 0';
+                conteudo.style.padding = '30px';
+                
+                document.getElementById('esquerda').style.display = 'flex';
+                document.getElementById('direita').style.display = 'flex';
+                document.getElementById('centro').style.width = '50%';
+            }
+            
+            // Ajuste especial para tablets em modo retrato
+            if (larguraTela > 600 && larguraTela <= 768) {
+                document.getElementById('centro').style.width = '70%';
+                document.getElementById('esquerda').style.width = '15%';
+                document.getElementById('direita').style.width = '15%';
+            }
+        }
+
+        // Executar a função quando a página carregar e quando a janela for redimensionada
+        window.addEventListener('load', ajustarLayout);
+        window.addEventListener('resize', ajustarLayout);
+    </script>
+</body>
+</html>

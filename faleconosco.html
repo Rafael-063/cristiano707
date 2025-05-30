@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fãs do CR7 - Recordes e Títulos</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container Principal */
+        #corpo {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 3px solid #000;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Cabeçalho */
+        #topo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+        }
+
+        #topo img {
+            height: 60px;
+            width: auto;
+        }
+
+        #topo h1 {
+            color: #fff;
+            margin: 0;
+            font-size: 1.8em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Menu de Navegação */
+        #menu {
+            text-align: center;
+            padding: 15px 0;
+            background-color: #111;
+        }
+
+        #menu div {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 25px;
+            background: #333;
+            color: #fff;
+            border: 2px solid #f0c040;
+            box-shadow: 2px 2px 0 #f0c040;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        #menu div:hover {
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 0 #f0c040;
+            background: #444;
+        }
+
+        /* Conteúdo Principal */
+        #conteudo {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+            gap: 30px;
+            background-color: #fff;
+        }
+
+        /* Colunas Laterais */
+        #esquerda, #direita {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #esquerda img, #direita img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        #esquerda img:hover, #direita img:hover {
+            transform: scale(1.02);
+        }
+
+        /* Coluna Central */
+        #centro {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .bio {
+            background-color: #fafafa;
+            padding: 25px;
+            border-left: 5px solid #f0c040;
+            text-align: justify;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+
+        .bio h2 {
+            text-align: center;
+            color: #f0c040;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .recordes-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .recordes-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .recordes-list strong {
+            color: #000;
+            font-size: 1.1em;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Rodapé */
+        #rodape {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+        }
+
+        #rodape p {
+            margin: 5px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            #conteudo {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            #esquerda, #centro, #direita {
+                width: 90%;
+            }
+            
+            #menu div {
+                padding: 10px 15px;
+                margin: 5px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #topo {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            
+            #topo h1 {
+                font-size: 1.5em;
+            }
+            
+            #menu div {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+            }
+            
+            .bio {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="corpo">
+        <!-- Cabeçalho -->
+        <div id="topo">
+            <img src="imagens/logocr7.png" alt="Logo Fãs do CR7">
+            <h1>Fãs do Cristiano Ronaldo</h1>
+        </div>
+
+        <!-- Menu de Navegação -->
+        <div id="menu">
+            <div onclick="location.href='index.html'">Quem é Cristiano Ronaldo</div>
+            <div onclick="location.href='empresa.html'">Biografia</div>
+            <div onclick="location.href='faleconosco.html'">Conquistas</div>
+            <div onclick="location.href='serviços.html'">Ações pelo mundo</div>
+            <div onclick="location.href='contatos.html'">Entre em contato</div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div id="conteudo">
+            <!-- Coluna Esquerda -->
+            <div id="esquerda">
+                <img src="imagens/boladiouro.jpg" alt="CR7 jovem no Sporting">
+                <img src="imagens/champions.jpg" alt="CR7 no Manchester United">
+                <img src="imagens/fera3.jpg">
+                <img src="imagens/fera4.jpg">
+            </div>
+
+            <!-- Coluna Central -->
+            <div id="centro">
+                <div class="bio">
+                    <h2>Recordes e Títulos de Cristiano Ronaldo</h2>
+                    
+                    <ul class="recordes-list">
+                        <li><strong>Maior artilheiro da história do futebol</strong> - Mais de 890 gols em toda carreira</li>
+                        <li><strong>Maior artilheiro da Champions League</strong> - 140 gols</li>
+                        <li><strong>Maior artilheiro da seleção portuguesa</strong> - 128 gols</li>
+                        <li><strong>Único jogador a marcar em 5 Copas do Mundo diferentes</strong> (2006-2022)</li>
+                        <li><strong>Jogador com mais partidas na história da Eurocopa</strong> - 25 jogos</li>
+                        <li><strong>Maior artilheiro da história do Real Madrid</strong> - 450 gols</li>
+                        <li><strong>Recorde de gols em uma única edição da Champions League</strong> - 17 gols (2013/14)</li>
+                        <li><strong>Jogador com mais hat-tricks na Champions League</strong> - 8</li>
+                        <li><strong>Jogador com mais gols de falta na Champions League</strong> - 12</li>
+                        <li><strong>Primeiro jogador a vencer a Champions League 5 vezes</strong></li>
+                        <li><strong>Único jogador a ser artilheiro da Champions League 7 vezes</strong></li>
+                        <li><strong>Jogador mais valioso da história</strong> - Transferência para o Real Madrid em 2009 (€94 milhões)</li>
+                        <li><strong>Atleta mais seguido no Instagram</strong> - Mais de 600 milhões de seguidores</li>
+                        <li><strong>Primeiro jogador a marcar em todas as jornadas da LaLiga</strong></li>
+                        <li><strong>Recorde de gols em clássicos Real Madrid x Barcelona</strong> - 18 gols</li>
+                        <li><strong>Jogador com mais gols em uma temporada da LaLiga</strong> - 48 gols (2014/15)</li>
+                        <li><strong>Primeiro jogador a marcar mais de 50 gols em 6 temporadas consecutivas</strong></li>
+                        <li><strong>Jogador com mais gols em eliminatórias da Eurocopa</strong> - 36 gols</li>
+                        <li><strong>Primeiro jogador a marcar em 10 competições da UEFA diferentes</strong></li>
+                        <li><strong>Jogador com mais prêmios de Melhor Jogador da FIFA/UEFA</strong></li>
+                        <li><strong>Recorde de gols em finais de competições da UEFA</strong> - 7 gols</li>
+                        <li><strong>Jogador mais velho a marcar 3 hat-tricks na Champions League em uma temporada</strong> - 34 anos</li>
+                        <li><strong>Primeiro jogador a marcar em 11 jogos consecutivos na Champions League</strong></li>
+                        <li><strong>Jogador com mais gols em jogos oficiais em um ano civil</strong> - 69 gols (2013)</li>
+                        <li><strong>Primeiro jogador a marcar mais de 50 gols em 7 temporadas consecutivas</strong></li>
+                        <li><strong>Jogador com mais gols em uma única fase de grupos da Champions League</strong> - 11 gols</li>
+                        <li><strong>Primeiro jogador a vencer ligas inglesa, espanhola e italiana</strong></li>
+                        <li><strong>Jogador com mais gols em jogos consecutivos pela seleção portuguesa</strong> - 10 jogos</li>
+                        <li><strong>Primeiro jogador a marcar em todas as fases da Champions League</strong> (fase de grupos, oitavas, quartas, semifinal e final)</li>
+                    </ul>
+                </div>
+                
+                
+            </div>
+
+            <!-- Coluna Direita -->
+            <div id="direita">
+                <img src="imagens/thebest.jpg">
+                <img src="imagens/euro.jpg">
+                <img src="imagens/fera7.jpg">
+                <img src="imagens/fera6.jpg">
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div id="rodape">
+            <p>Site não-oficial dos fãs de Cristiano Ronaldo</p>
+            <p>Todos os direitos das imagens e vídeos pertencem a seus respectivos donos</p>
+            <p>&copy; 2025 - Fãs do CR7</p>
+        </div>
+    </div>
+</body>
+</html>
