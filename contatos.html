@@ -186,6 +186,100 @@
             border: none;
         }
 
+        /* Estilos do Formulário */
+        .formulario-contato {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #f0c040;
+        }
+
+        .formulario-contato h2 {
+            color: #f0c040;
+            margin-top: 0;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .campo-formulario {
+            margin-bottom: 20px;
+        }
+
+        .campo-formulario label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .campo-formulario input,
+        .campo-formulario textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        .campo-formulario input:focus,
+        .campo-formulario textarea:focus {
+            border-color: #f0c040;
+            outline: none;
+            box-shadow: 0 0 5px rgba(240, 192, 64, 0.5);
+        }
+
+        .campo-formulario textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .botao-enviar {
+            background-color: #f0c040;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .botao-enviar:hover {
+            background-color: #e0b030;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .mensagem-erro {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .campo-invalido {
+            border-color: #e74c3c !important;
+        }
+
+        .mensagem-sucesso {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: none;
+        }
+
         /* Rodapé */
         #rodape {
             background-color: #000;
@@ -242,6 +336,10 @@
                 flex-direction: column;
                 gap: 15px;
             }
+            
+            .formulario-contato {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -274,7 +372,7 @@
             <div id="centro">
                 <div class="contato">
                     <h2>Entre em Contato Conosco</h2>
-                    <p>Quer fazer parte da maior comunidade de fãs do Cristiano Ronaldo? Tem alguma sugestão ou mensagem para compartilhar? Entre em contato através de nossas redes sociais!</p>
+                    <p>Quer fazer parte da maior comunidade de fãs do Cristiano Ronaldo? Tem alguma sugestão ou mensagem para compartilhar? Entre em contato através de nossas redes sociais ou preencha o formulário abaixo!</p>
                     
                     <div class="botoes-contato">
                         <a href="https://www.instagram.com/cristiano" id="instagram" class="botao-social" target="_blank">
@@ -289,7 +387,36 @@
                     </div>
                 </div>
                 
-              
+                <!-- Formulário de Contato -->
+                <div class="formulario-contato">
+                    <h2>Envie sua Mensagem</h2>
+                    
+                    <div id="mensagem-sucesso" class="mensagem-sucesso">
+                        Mensagem enviada com sucesso! Obrigado pelo contato.
+                    </div>
+                    
+                    <form id="form-contato">
+                        <div class="campo-formulario">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                            <div id="erro-nome" class="mensagem-erro">Por favor, insira seu nome.</div>
+                        </div>
+                        
+                        <div class="campo-formulario">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
+                            <div id="erro-email" class="mensagem-erro">Por favor, insira um e-mail válido.</div>
+                        </div>
+                        
+                        <div class="campo-formulario">
+                            <label for="mensagem">Mensagem:</label>
+                            <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem"></textarea>
+                            <div id="erro-mensagem" class="mensagem-erro">Por favor, insira sua mensagem.</div>
+                        </div>
+                        
+                        <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+                    </form>
+                </div>
             </div>
 
             <!-- Coluna Direita -->
@@ -306,5 +433,84 @@
             <p>&copy; 2025 - Fãs do CR7</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('form-contato');
+            const mensagemSucesso = document.getElementById('mensagem-sucesso');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Resetar erros anteriores
+                resetarErros();
+                
+                // Validar campos
+                let valido = true;
+                
+                // Validar nome
+                const nome = document.getElementById('nome');
+                if (nome.value.trim() === '') {
+                    mostrarErro('nome', 'Por favor, insira seu nome.');
+                    valido = false;
+                }
+                
+                // Validar email
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value.trim())) {
+                    mostrarErro('email', 'Por favor, insira um e-mail válido.');
+                    valido = false;
+                }
+                
+                // Validar mensagem
+                const mensagem = document.getElementById('mensagem');
+                if (mensagem.value.trim() === '') {
+                    mostrarErro('mensagem', 'Por favor, insira sua mensagem.');
+                    valido = false;
+                }
+                
+                // Se tudo estiver válido, mostrar mensagem de sucesso
+                if (valido) {
+                    mensagemSucesso.style.display = 'block';
+                    form.reset();
+                    
+                    // Esconder a mensagem após 5 segundos
+                    setTimeout(function() {
+                        mensagemSucesso.style.display = 'none';
+                    }, 5000);
+                }
+            });
+            
+            function mostrarErro(campo, mensagem) {
+                const elementoErro = document.getElementById(`erro-${campo}`);
+                const elementoCampo = document.getElementById(campo);
+                
+                elementoErro.textContent = mensagem;
+                elementoErro.style.display = 'block';
+                elementoCampo.classList.add('campo-invalido');
+                
+                // Focar no campo com erro
+                elementoCampo.focus();
+            }
+            
+            function resetarErros() {
+                // Esconder todas as mensagens de erro
+                const erros = document.querySelectorAll('.mensagem-erro');
+                erros.forEach(erro => {
+                    erro.style.display = 'none';
+                });
+                
+                // Remover a classe de campo inválido
+                const campos = document.querySelectorAll('.campo-formulario input, .campo-formulario textarea');
+                campos.forEach(campo => {
+                    campo.classList.remove('campo-invalido');
+                });
+                
+                // Esconder mensagem de sucesso
+                mensagemSucesso.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
