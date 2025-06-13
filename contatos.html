@@ -1,438 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fãs do CR7 - Contato</title>
-    <style>
-        /* Estilos Gerais */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        /* Container Principal */
-        #corpo {
-            max-width: 1400px;
-            margin: 0 auto;
-            background-color: #fff;
-            border: 3px solid #000;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-
-        /* Cabeçalho */
-        #topo {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 10px 20px;
-            background-color: #000;
-        }
-
-        #topo img {
-            height: 60px;
-            width: auto;
-        }
-
-        #topo h1 {
-            color: #fff;
-            margin: 0;
-            font-size: 1.8em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        /* Menu de Navegação */
-        #menu {
-            text-align: center;
-            padding: 15px 0;
-            background-color: #111;
-        }
-
-        #menu div {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 12px 25px;
-            background: #333;
-            color: #fff;
-            border: 2px solid #f0c040;
-            box-shadow: 2px 2px 0 #f0c040;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            border-radius: 4px;
-        }
-
-        #menu div:hover {
-            transform: translateY(-3px);
-            box-shadow: 4px 4px 0 #f0c040;
-            background: #444;
-        }
-
-        /* Conteúdo Principal */
-        #conteudo {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px;
-            gap: 30px;
-            background-color: #fff;
-        }
-
-        /* Colunas Laterais */
-        #esquerda, #direita {
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        #esquerda img, #direita img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        #esquerda img:hover, #direita img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Coluna Central */
-        #centro {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .contato {
-            background-color: #fafafa;
-            padding: 30px;
-            border-left: 5px solid #f0c040;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-            line-height: 1.6;
-            width: 100%;
-        }
-
-        .contato h2 {
-            text-align: center;
-            color: #f0c040;
-            margin-top: 0;
-            margin-bottom: 30px;
-            font-size: 1.8em;
-        }
-
-        .botoes-contato {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .botao-social {
-            display: flex;
-            align-items: center;
-            padding: 15px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .botao-social:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0,0,0,0.15);
-        }
-
-        .botao-social img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        #instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-        }
-
-        #whatsapp {
-            background: #25D366;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Estilos do Formulário */
-        .formulario-contato {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #f0c040;
-        }
-
-        .formulario-contato h2 {
-            color: #f0c040;
-            margin-top: 0;
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .campo-formulario {
-            margin-bottom: 20px;
-        }
-
-        .campo-formulario label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        .campo-formulario input,
-        .campo-formulario textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 16px;
-            transition: border 0.3s ease;
-        }
-
-        .campo-formulario input:focus,
-        .campo-formulario textarea:focus {
-            border-color: #f0c040;
-            outline: none;
-            box-shadow: 0 0 5px rgba(240, 192, 64, 0.5);
-        }
-
-        .campo-formulario textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .botao-enviar {
-            background-color: #f0c040;
-            color: #000;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .botao-enviar:hover {
-            background-color: #e0b030;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        }
-
-        .mensagem-erro {
-            color: #e74c3c;
-            font-size: 14px;
-            margin-top: 5px;
-            display: none;
-        }
-
-        .campo-invalido {
-            border-color: #e74c3c !important;
-        }
-
-        .mensagem-sucesso {
-            background-color: #2ecc71;
-            color: white;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            text-align: center;
-            display: none;
-        }
-
-        /* Rodapé */
-        #rodape {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            font-size: 1em;
-        }
-
-        #rodape p {
-            margin: 5px 0;
-        }
-
-        /* Responsividade */
-        @media (max-width: 1024px) {
-            #conteudo {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            #esquerda, #centro, #direita {
-                width: 90%;
-            }
-            
-            #menu div {
-                padding: 10px 15px;
-                margin: 5px;
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 600px) {
-            #topo {
-                flex-direction: column;
-                text-align: center;
-                padding: 15px;
-            }
-            
-            #topo h1 {
-                font-size: 1.5em;
-            }
-            
-            #menu div {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-            }
-            
-            .contato {
-                padding: 20px;
-            }
-            
-            .botoes-contato {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .formulario-contato {
-                padding: 20px;
-            }
-        }
-    </style>
+    <!-- ... (mantenha todo o head existente) ... -->
 </head>
 <body>
-    <div id="corpo">
-        <!-- Cabeçalho -->
-        <div id="topo">
-            <img src="imagens/logocr7.png" alt="Logo Fãs do CR7">
-            <h1>Fãs do Cristiano Ronaldo</h1>
-        </div>
-
-        <!-- Menu de Navegação -->
-        <div id="menu">
-            <div onclick="location.href='index.html'">Quem é Cristiano Ronaldo</div>
-            <div onclick="location.href='empresa.html'">Biografia</div>
-            <div onclick="location.href='faleconosco.html'">Conquistas</div>
-            <div onclick="location.href='serviços.html'">Ações pelo mundo</div>
-            <div onclick="location.href='contatos.html'">Entre em contato</div>
-        </div>
-
-        <!-- Conteúdo Principal -->
-        <div id="conteudo">
-            <!-- Coluna Esquerda -->
-            <div id="esquerda">
-                <img src="imagens/capita.jpg" alt="CR7 com fãs">
-                <img src="imagens/gostoso2.jpg" alt="CR7 interagindo">
-            </div>
-
-            <!-- Coluna Central -->
-            <div id="centro">
-                <div class="contato">
-                    <h2>Entre em Contato Conosco</h2>
-                    <p>Quer fazer parte da maior comunidade de fãs do Cristiano Ronaldo? Tem alguma sugestão ou mensagem para compartilhar? Entre em contato através de nossas redes sociais ou preencha o formulário abaixo!</p>
-                    
-                    <div class="botoes-contato">
-                        <a href="https://www.instagram.com/cristiano" id="instagram" class="botao-social" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram">
-                            Instagram
-                        </a>
-                        
-                        <a href="https://wa.me/5563992312739" id="whatsapp" class="botao-social" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2048px-WhatsApp.svg.png" alt="WhatsApp">
-                            WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Formulário de Contato -->
-                <div class="formulario-contato">
-                    <h2>Envie sua Mensagem</h2>
-                    
-                    <div id="mensagem-sucesso" class="mensagem-sucesso">
-                        Mensagem enviada com sucesso! Obrigado pelo contato.
-                    </div>
-                    
-                    <form id="form-contato">
-                        <div class="campo-formulario">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
-                            <div id="erro-nome" class="mensagem-erro">Por favor, insira seu nome.</div>
-                        </div>
-                        
-                        <div class="campo-formulario">
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail">
-                            <div id="erro-email" class="mensagem-erro">Por favor, insira um e-mail válido.</div>
-                        </div>
-                        
-                        <div class="campo-formulario">
-                            <label for="mensagem">Mensagem:</label>
-                            <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem"></textarea>
-                            <div id="erro-mensagem" class="mensagem-erro">Por favor, insira sua mensagem.</div>
-                        </div>
-                        
-                        <button type="submit" class="botao-enviar">Enviar Mensagem</button>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Coluna Direita -->
-            <div id="direita">
-                <img src="imagens/gostoso4.jpg" alt="CR7 autografando">
-                <img src="imagens/gostoso3.jpg" alt="CR7 com torcedores">
-            </div>
-        </div>
-
-        <!-- Rodapé -->
-        <div id="rodape">
-            <p>Site não-oficial dos fãs de Cristiano Ronaldo</p>
-            <p>Todos os direitos das imagens e vídeos pertencem a seus respectivos donos</p>
-            <p>&copy; 2025 - Fãs do CR7</p>
-        </div>
-    </div>
+    <!-- ... (mantenha todo o HTML existente até o final do rodapé) ... -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -440,38 +12,41 @@
             const mensagemSucesso = document.getElementById('mensagem-sucesso');
             
             form.addEventListener('submit', function(e) {
-                e.preventDefault();
+                e.preventDefault(); // Impede o envio padrão do formulário
                 
                 // Resetar erros anteriores
                 resetarErros();
                 
                 // Validar campos
-                let valido = true;
+                let formularioValido = true;
                 
                 // Validar nome
                 const nome = document.getElementById('nome');
                 if (nome.value.trim() === '') {
                     mostrarErro('nome', 'Por favor, insira seu nome.');
-                    valido = false;
+                    formularioValido = false;
                 }
                 
                 // Validar email
                 const email = document.getElementById('email');
                 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email.value.trim())) {
+                if (email.value.trim() === '') {
+                    mostrarErro('email', 'Por favor, insira seu e-mail.');
+                    formularioValido = false;
+                } else if (!emailRegex.test(email.value.trim())) {
                     mostrarErro('email', 'Por favor, insira um e-mail válido.');
-                    valido = false;
+                    formularioValido = false;
                 }
                 
                 // Validar mensagem
                 const mensagem = document.getElementById('mensagem');
                 if (mensagem.value.trim() === '') {
                     mostrarErro('mensagem', 'Por favor, insira sua mensagem.');
-                    valido = false;
+                    formularioValido = false;
                 }
                 
                 // Se tudo estiver válido, mostrar mensagem de sucesso
-                if (valido) {
+                if (formularioValido) {
                     mensagemSucesso.style.display = 'block';
                     form.reset();
                     
@@ -482,9 +57,9 @@
                 }
             });
             
-            function mostrarErro(campo, mensagem) {
-                const elementoErro = document.getElementById(`erro-${campo}`);
-                const elementoCampo = document.getElementById(campo);
+            function mostrarErro(campoId, mensagem) {
+                const elementoErro = document.getElementById(`erro-${campoId}`);
+                const elementoCampo = document.getElementById(campoId);
                 
                 elementoErro.textContent = mensagem;
                 elementoErro.style.display = 'block';
@@ -506,13 +81,39 @@
                 campos.forEach(campo => {
                     campo.classList.remove('campo-invalido');
                 });
-                
-                // Esconder mensagem de sucesso
-                mensagemSucesso.style.display = 'none';
             }
+
+            // Validação em tempo real para melhor experiência do usuário
+            document.getElementById('nome').addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    mostrarErro('nome', 'Por favor, insira seu nome.');
+                } else {
+                    document.getElementById('erro-nome').style.display = 'none';
+                    this.classList.remove('campo-invalido');
+                }
+            });
+
+            document.getElementById('email').addEventListener('blur', function() {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (this.value.trim() === '') {
+                    mostrarErro('email', 'Por favor, insira seu e-mail.');
+                } else if (!emailRegex.test(this.value.trim())) {
+                    mostrarErro('email', 'Por favor, insira um e-mail válido.');
+                } else {
+                    document.getElementById('erro-email').style.display = 'none';
+                    this.classList.remove('campo-invalido');
+                }
+            });
+
+            document.getElementById('mensagem').addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    mostrarErro('mensagem', 'Por favor, insira sua mensagem.');
+                } else {
+                    document.getElementById('erro-mensagem').style.display = 'none';
+                    this.classList.remove('campo-invalido');
+                }
+            });
         });
     </script>
 </body>
 </html>
-
-              
