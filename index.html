@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fãs do CR7 - O Maior de Todos</title>
+    <title>Fãs do CR7 - Entre em Contato</title>
     <style>
-        /* Estilos Gerais */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f4f4;
@@ -15,7 +13,6 @@
             color: #333;
         }
 
-        /* Container Principal */
         #corpo {
             max-width: 1400px;
             margin: 0 auto;
@@ -24,7 +21,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        /* Cabeçalho */
         #topo {
             display: flex;
             align-items: center;
@@ -45,7 +41,6 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* Menu de Navegação */
         #menu {
             text-align: center;
             padding: 15px 0;
@@ -72,80 +67,88 @@
             background: #444;
         }
 
-        /* Conteúdo Principal */
-        #conteudo {
-            display: flex;
-            justify-content: space-between;
-            padding: 30px;
-            gap: 30px;
-            background-color: #fff;
-        }
-
-        /* Colunas Laterais */
-        #esquerda, #direita {
-            width: 25%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        #esquerda img, #direita img {
+        .formulario-contato {
             width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        #esquerda img:hover, #direita img:hover {
-            transform: scale(1.02);
-        }
-
-        /* Coluna Central */
-        #centro {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .bio {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
             background-color: #fafafa;
-            padding: 25px;
-            border-left: 5px solid #f0c040;
-            text-align: justify;
             border-radius: 8px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
-            line-height: 1.6;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .bio h2 {
+        .formulario-contato h2 {
             text-align: center;
             color: #f0c040;
             margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.5em;
+            margin-bottom: 20px;
         }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            height: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #f0c040;
+            box-shadow: 0 0 5px rgba(240, 192, 64, 0.5);
+        }
+
+        .btn-submit {
+            background-color: #f0c040;
+            color: #000;
             border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
         }
 
-        /* Rodapé */
+        .btn-submit:hover {
+            background-color: #e0b030;
+        }
+
+        .error-message {
+            color: #d9534f;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .success-message {
+            color: #5cb85c;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+        }
+
         #rodape {
             background-color: #000;
             color: #fff;
@@ -158,43 +161,10 @@
             margin: 5px 0;
         }
 
-        /* Responsividade */
-        @media (max-width: 1024px) {
-            #conteudo {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            #esquerda, #centro, #direita {
-                width: 90%;
-            }
-            
-            #menu div {
-                padding: 10px 15px;
-                margin: 5px;
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 600px) {
-            #topo {
-                flex-direction: column;
-                text-align: center;
+        @media (max-width: 768px) {
+            .formulario-contato {
                 padding: 15px;
-            }
-            
-            #topo h1 {
-                font-size: 1.5em;
-            }
-            
-            #menu div {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-            }
-            
-            .bio {
-                padding: 15px;
+                margin: 20px 15px;
             }
         }
     </style>
@@ -218,29 +188,45 @@
 
         <!-- Conteúdo Principal -->
         <div id="conteudo">
-            <!-- Coluna Esquerda -->
-            <div id="esquerda">
-                <img src="imagens/cr7-jovem.jpg" alt="CR7 jovem no Sporting">
-                <img src="imagens/cr7-manchester.jpg" alt="CR7 no Manchester United">
-            </div>
+            <div class="formulario-contato">
+                <h2>Entre em Contato</h2>
+                <form id="contatoForm" novalidate>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo*</label>
+                        <input type="text" id="nome" name="nome" required>
+                        <div id="nomeError" class="error-message"></div>
+                    </div>
 
-            <!-- Coluna Central -->
-            <div id="centro">
-                <div class="bio">
-                    <h2>O Maior Jogador de Todos os Tempos</h2>
-                    <p>Cristiano Ronaldo é um dos maiores jogadores da história do futebol, conhecido por sua dedicação extrema, físico impressionante e mentalidade vencedora. Nascido em Portugal, ele começou sua carreira no Sporting CP antes de se destacar no Manchester United, onde conquistou sua primeira Champions League e Bola de Ouro. No Real Madrid, tornou-se lenda, sendo o maior artilheiro do clube e vencendo quatro Champions League. Passou ainda pela Juventus e retornou ao United antes de se transferir para o Al-Nassr, na Arábia Saudita. Pela seleção portuguesa, é o maior artilheiro de todos os tempos e levou seu país à vitória na Eurocopa 2016 e na Liga das Nações em 2019.</p>
-                    <p>Além do futebol, Ronaldo é um fenômeno global, com uma marca pessoal forte, patrocínios milionários e influência nas redes sociais, onde tem milhões de seguidores. Sua rivalidade com Lionel Messi marcou uma era no esporte, mas seu legado vai além, inspirando atletas com sua ética de trabalho e longevidade no alto nível. Aos 39 anos, continua competindo, provando que disciplina e paixão pelo jogo podem prolongar uma carreira de sucesso.</p>
-                </div>
-                
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/OUKGsb8CpF8" title="Melhores momentos de CR7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+                    <div class="form-group">
+                        <label for="email">E-mail*</label>
+                        <input type="email" id="email" name="email" required>
+                        <div id="emailError" class="error-message"></div>
+                    </div>
 
-            <!-- Coluna Direita -->
-            <div id="direita">
-                <img src="imagens/cr7-real-madrid.jpg" alt="CR7 no Real Madrid">
-                <img src="imagens/cr7-portugal.jpg" alt="CR7 pela seleção portuguesa">
+                    <div class="form-group">
+                        <label for="assunto">Assunto*</label>
+                        <select id="assunto" name="assunto" required>
+                            <option value="">Selecione um assunto</option>
+                            <option value="elogio">Elogio</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="critica">Crítica</option>
+                            <option value="duvida">Dúvida</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                        <div id="assuntoError" class="error-message"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem*</label>
+                        <textarea id="mensagem" name="mensagem" required></textarea>
+                        <div id="mensagemError" class="error-message"></div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+                <div id="successMessage" class="success-message">
+                    Mensagem enviada com sucesso! Obrigado pelo seu contato.
+                </div>
             </div>
         </div>
 
@@ -251,5 +237,118 @@
             <p>&copy; 2025 - Fãs do CR7</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contatoForm');
+            const successMessage = document.getElementById('successMessage');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Resetar mensagens de erro
+                clearErrorMessages();
+                
+                // Validar campos
+                const nomeValido = validateNome();
+                const emailValido = validateEmail();
+                const assuntoValido = validateAssunto();
+                const mensagemValida = validateMensagem();
+                
+                // Se todos os campos forem válidos, "enviar" o formulário
+                if (nomeValido && emailValido && assuntoValido && mensagemValida) {
+                    // Simulando envio bem-sucedido
+                    form.reset();
+                    successMessage.style.display = 'block';
+                    
+                    // Esconder a mensagem de sucesso após 5 segundos
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }
+            });
+            
+            function clearErrorMessages() {
+                const errorMessages = document.querySelectorAll('.error-message');
+                errorMessages.forEach(msg => {
+                    msg.textContent = '';
+                });
+            }
+            
+            function validateNome() {
+                const nomeInput = document.getElementById('nome');
+                const nomeError = document.getElementById('nomeError');
+                const nome = nomeInput.value.trim();
+                
+                if (nome === '') {
+                    nomeError.textContent = 'Por favor, insira seu nome.';
+                    return false;
+                }
+                
+                if (nome.length < 3) {
+                    nomeError.textContent = 'O nome deve ter pelo menos 3 caracteres.';
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            function validateEmail() {
+                const emailInput = document.getElementById('email');
+                const emailError = document.getElementById('emailError');
+                const email = emailInput.value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (email === '') {
+                    emailError.textContent = 'Por favor, insira seu e-mail.';
+                    return false;
+                }
+                
+                if (!emailRegex.test(email)) {
+                    emailError.textContent = 'Por favor, insira um e-mail válido.';
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            function validateAssunto() {
+                const assuntoInput = document.getElementById('assunto');
+                const assuntoError = document.getElementById('assuntoError');
+                const assunto = assuntoInput.value;
+                
+                if (assunto === '') {
+                    assuntoError.textContent = 'Por favor, selecione um assunto.';
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            function validateMensagem() {
+                const mensagemInput = document.getElementById('mensagem');
+                const mensagemError = document.getElementById('mensagemError');
+                const mensagem = mensagemInput.value.trim();
+                
+                if (mensagem === '') {
+                    mensagemError.textContent = 'Por favor, insira sua mensagem.';
+                    return false;
+                }
+                
+                if (mensagem.length < 10) {
+                    mensagemError.textContent = 'A mensagem deve ter pelo menos 10 caracteres.';
+                    return false;
+                }
+                
+                return true;
+            }
+            
+            // Validação em tempo real para melhor experiência do usuário
+            document.getElementById('nome').addEventListener('blur', validateNome);
+            document.getElementById('email').addEventListener('blur', validateEmail);
+            document.getElementById('assunto').addEventListener('change', validateAssunto);
+            document.getElementById('mensagem').addEventListener('blur', validateMensagem);
+        });
+    </script>
 </body>
 </html>
